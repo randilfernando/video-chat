@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <title>Hello Peers!</title>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/">Hello Peers!</a>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-12 offset-lg-3">
+            <div id="info" class="alert alert-primary mt-5" role="alert">Disconnected</div>
+
+            <div class="form-group row">
+                <label for="myId" class="col-sm-3 col-form-label">My Id</label>
+                <div class="col-sm-9">
+                    <input readonly type="text" class="form-control" id="myId">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="peerId" class="col-sm-3 col-form-label">Peer Id</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="peerId" placeholder="Enter here...">
+                </div>
+            </div>
+
+            <video id="video" style="width: 100%; height: auto"></video>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <button onclick="accept()" type="button" class="btn btn-primary btn-block mt-2"><i class="fas fa-phone"></i></button>
+                </div>
+                <div class="col">
+                    <button onclick="reject()" type="button" class="btn btn-danger btn-block mt-2"><i class="fas fa-phone-slash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="assets/peer.min.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>
