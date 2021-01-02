@@ -16,7 +16,7 @@ const initPeer = function () {
         config: {
             'iceServers': [
                 { url: 'stun:stun.l.google.com:19302' },
-                { url: 'turn:homeo@turn.bistri.com:80', credential: 'homeo' }
+                { url: 'turn:turn.bistri.com:80', credential: 'homeo', username: 'homeo' }
             ]
         }
     });
