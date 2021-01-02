@@ -88,10 +88,20 @@ const answerCall = function () {
 
 const startCall = function (remoteStream) {
     const mediaStream = new MediaStream(remoteStream);
-    window.video.get(0).src = mediaStream;
-    window.video.get(0).play();
-    window.video.show();
-    $('#info').text('Connected');
+    window.video.get(0).srcObject = mediaStream;
+    var playPromise = window.video.get(0).play();
+    
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          window.video.show();
+          $('#info').text('Connected');
+        })
+        .catch(error => {
+            $('#info').text('Video error');
+          // Auto-play was prevented
+          // Show paused UI.
+        });
+      }
 };
 
 const endCall = function () {
