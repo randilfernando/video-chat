@@ -10,7 +10,16 @@ $(document).ready(function () {
 });
 
 const initPeer = function () {
-    peer = new Peer({host: 'hello-peers.herokuapp.com', port: ''});
+    peer = new Peer({
+        host: 'hello-peers.herokuapp.com', 
+        port: '',
+        config: {
+            'iceServers': [
+                { url: 'stun:stun.l.google.com:19302' },
+                { url: 'turn:homeo@turn.bistri.com:80', credential: 'homeo' }
+            ]
+        }
+    });
     peer.on('open', function (id) {
         $('#info').text('Idle');
         $('#myId').val(id);
