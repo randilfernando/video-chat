@@ -87,7 +87,8 @@ const answerCall = function () {
 };
 
 const startCall = function (remoteStream) {
-    window.video.get(0).src = URL.createObjectURL(remoteStream);
+    const mediaStream = new MediaStream(remoteStream);
+    window.video.get(0).src = mediaStream;
     window.video.get(0).play();
     window.video.show();
     $('#info').text('Connected');
