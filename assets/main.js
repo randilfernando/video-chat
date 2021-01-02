@@ -87,8 +87,7 @@ const answerCall = function () {
 };
 
 const startCall = function (remoteStream) {
-    const mediaStream = new MediaStream(remoteStream);
-    window.video.get(0).srcObject = mediaStream;
+    window.video.get(0).srcObject = remoteStream;
     var playPromise = window.video.get(0).play();
     
       if (playPromise !== undefined) {
